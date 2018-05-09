@@ -1,0 +1,197 @@
+<!--
+    Write an HTML document with a form for interacting with the Lorem Ipsum
+    generator. This generator can be used, in a REST manner, from the URL
+    https://loripsum.net/api by specifying further parameters such as:
+    1. the number of paragraphs to be generated (integer)
+    2. the average length of a paragrah (short, medium, long, verylong)
+    3. decorate to add bold, italic and marked text
+    For example, by GETting the URL http://loripsum.net/api/10/short/decorate
+    you will get 10 short decorated paragraphs.
+    The form should allow to enter the number of paragraphs (by default 5), the
+    average length (through a radio button) and whether the generated text should
+    be decorated.
+    Moreover, the form should have a button, that once clicked queries the Lorem
+    Ipsum generator (through the fetch() function) and when the result is available
+    it will include it in a <div id="placeholder"> element.
+-->
+<!doctype HTML>
+<html>
+    <head>
+        <title>Exercise 11</title>
+        <script src="Exercise7.js" defer></script>
+        <script src="Exercise8.js" defer></script>
+        <script src="Exercise9.js" defer></script>
+        <script src="Exercise10.js" defer></script>
+        <script src="Exercise11.js" defer></script>
+    </head>
+    <body>
+        <h1>Exercise 1</h1>
+        <p>
+            <ul>
+                <li>Element 1 (bulletted list)</li>
+                <li>Element 2 (bulletted list)</li>
+                <li>Element 3 (bulletted list)</li>
+                <ol>
+                    <li>First Element (numbered list)</li>
+                    <li>Second Element (numbered list)</li>
+                </ol>
+            </ul>
+        </p>
+        <h1>Exercise 2</h1>
+        <p>
+            <img src="Images/html.png"/>
+        </p>
+        <h1>Exercise 3</h1>
+        <p>
+            This is the third paragraph which contains <em>em elements</em> and <strong>strong elements</strong>
+            <a href="http://it.wikipedia.org/wiki/File:Bart_Simpson.png"><img src="http://upload.wikimedia.org/wikipedia/it/6/65/Bart_Simpson.png"/></a>
+        </p>
+        <h1>Exercise 4</h1>
+        <p>
+            <table border="1">
+                <caption>Didascalia della tabella</caption>
+                <thread>
+                    <tr>
+                        <td><strong>Column 1</strong></td>
+                        <td><strong>Column 2</strong></td>
+                        <td><strong>Column 3</strong></td>
+                        <td><strong>Column 4</strong></td>
+                    </tr>
+                </thread>
+                <tfoot>
+                    <tr>
+                        <td><strong>45</strong></td>
+                        <td><strong>50</strong></td>
+                        <td><strong>55</strong></td>
+                        <td><strong>60</strong></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <h1>Exercise 5</h1>
+        <p>
+            <form action="http://satt.diegm.uniud.it/wa/test_form.php">
+                <div><label>Username: <input type="text" name="username"></label></div>
+                <div><label>Password: <input type="password" name="password"></label></div>
+                <div><input type="submit"><input type="reset"></div>
+            </form>
+        </p>
+        <h1>Exercise 6</h1>
+        <p>
+            <form action="http://satt.diegm.uniud.it/wa/test_form.php">
+                <div><label>Username: <input type="text" name="username"></label></div>
+                <div><label>Password: <input type="password" name="password"></label></div>
+                <fieldset>
+                    <legend> Radio buttons </legend>
+                    <div><label> <input type=radio name="sz"> Small </label></div>
+                    <div><label> <input type=radio name="sz"> Medium </label></div>
+                    <div><label> <input type=radio name="sz"> Large </label></div>
+                </fieldset>
+                <fieldset>
+                    <legend> Checkbox </legend>
+                    <div><label> <input type=checkbox> Option 1 </label></div>
+                    <div><label> <input type=checkbox> Option 2 </label></div>
+                    <div><label> <input type=checkbox> Option 3 </label></div>
+                    <div><label> <input type=checkbox> Option 4 </label></div>
+                </fieldset>
+                <fieldset>
+                    <legend> Selection list </legend>
+                    <select multiple>
+                        <option value="value1">Value 1</option> 
+                        <option value="value2">Value 2</option>
+                        <option value="value3">Value 3</option>
+                        <option value="value4">Value 4</option>
+                        <option value="value5">Value 5</option>
+                    </select>
+                </fieldset>
+                <div> <input type="submit"><input type="reset"></div>
+            </form>
+        </p>
+        <h1>Exercise 7</h1>
+        <p>
+            <img src="Images/html.png" id="immagine"/>
+        </p>
+        <h1>Exercise 8</h1>
+        <p>
+            <img src="Images/html.png" id="immagine8" onclick="onClick(this)" onmouseover="onMouseover(this)" onmouseout="onMouseout(this)" oncontextmenu="onContextmenu(this)"/>
+        </p>
+        <h1>Exercise 9</h1>
+        <p>
+            <button onclick="hideFunction()" class="lorem">Hide</button>
+            <button onclick="seekFunction(this)">Seek</button><div id="placeholder"></div>
+        </p>
+        <h1>Exercise 10</h1>
+        <p>
+            <form>
+                <div><label> <input type=checkbox id="myCheck" onclick="changeStatusFieldset(this)" checked> Enable/disable fieldset </label></div>
+                <fieldset id="myFieldset">
+                    <legend> Fieldset </legend>
+                    <br>
+                    <legend> Radio buttons </legend>
+                    <div><label> <input type=radio name="sz"> Small </label></div>
+                    <div><label> <input type=radio name="sz"> Medium </label></div>
+                    <div><label> <input type=radio name="sz"> Large </label></div>
+                    <br>
+                    <legend> Checkbox </legend>
+                    <div><label> <input type=checkbox> Option 1 </label></div>
+                    <div><label> <input type=checkbox> Option 2 </label></div>
+                    <div><label> <input type=checkbox> Option 3 </label></div>
+                    <div><label> <input type=checkbox> Option 4 </label></div>
+                    <br>
+                    <legend> Selection list </legend>
+                    <select multiple>
+                        <option value="value1">Value 1</option> 
+                        <option value="value2">Value 2</option>
+                        <option value="value3">Value 3</option>
+                        <option value="value4">Value 4</option>
+                        <option value="value5">Value 5</option>
+                    </select>
+                    <br><br>
+                    <input type="submit"><input type="reset" onclick="checkedEnable">
+                </fieldset>
+            </form>
+        </p>
+        <h1>Exercise 11</h1>
+        <p>
+            <form>
+                <legend> Alcoholic or Non Alcoholic drinks</legend>
+                <div><label> <input type=radio name="drink" id="Alc"> Alcoholic </label></div>
+                <div><label> <input type=radio name="drink" id="N_Alc"> Non_Alcoholic </label></div>
+                <button id="bt">Invia</button><input type="reset">
+            </form>
+            <div id="placeholder2"></div>
+        </p>
+    </body>
+</html>
